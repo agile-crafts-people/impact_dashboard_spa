@@ -7,7 +7,7 @@
         data-automation-id="nav-drawer-toggle"
         aria-label="Open navigation drawer"
       />
-      <v-app-bar-title>{{service.name | capitalize}}</v-app-bar-title>
+      <v-app-bar-title>Dashboard</v-app-bar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -16,49 +16,73 @@
       temporary
     >
       <v-list density="compact" nav>
-        {% for item in service.data_domains.controls %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>DASHBOARD DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/dashboards"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Dashboards"
+          data-automation-id="nav-dashboards-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/dashboards/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New Dashboard"
+          data-automation-id="nav-dashboards-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.creates %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        
+        <v-list-subheader>POST DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/posts"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Posts"
+          data-automation-id="nav-posts-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/posts/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New Post"
+          data-automation-id="nav-posts-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.consumes %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>COMMENT DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/comments"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Comments"
+          data-automation-id="nav-comments-list-link"
         />
-        {% endfor %}
+        <v-list-item
+          to="/comments/new"
+          prepend-icon="mdi-plus"
+          title="New Comment"
+          data-automation-id="nav-comments-new-link"
+        />
+
+        <v-divider class="my-2" />
+        
+        
+        <v-list-subheader>CLASSIFICATION DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/classifications"
+          prepend-icon="mdi-view-list"
+          title="List Classifications"
+          data-automation-id="nav-classifications-list-link"
+        />
+        
+        <v-list-subheader>PROFILE DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/profiles"
+          prepend-icon="mdi-view-list"
+          title="List Profiles"
+          data-automation-id="nav-profiles-list-link"
+        />
+        
       </v-list>
 
       <template v-slot:append>
